@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Management</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+</head>
+<body>
+<div class="bg-image" style="background-image: url('https://images7.alphacoders.com/320/320474.jpg'); height: 100vh;">
+<div class="container-fluid text-center card-body">
+    <br><br><br>
+    <h1 style="color: cornsilk ">Employee Management System</h1>
+    <br><br><br><br><br><br>
+    <div class="container">
+        <div class="row row-cols-4">
+
+            <div class="col"><div class="card" style="width: 15rem; height: 26rem;">
+                <img src="https://us.123rf.com/450wm/msvetlana/msvetlana1404/msvetlana140400011/27900996-factory-building-with-offices-production-facilities-and-reflection.jpg?ver=6&utm_source=shareasale&utm_medium=affiliate&utm_campaign=742098_1195097&sscid=a1k5_jl5hb" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Department</h5>
+                    <p class="card-text">Main sections in our organization.</p>
+                    <a th:href="@{/department}" class="btn btn-primary">Details</a>
+                </div>
+            </div></div>
+
+            <div class="col"><div class="card" style="width: 15rem; height: 26rem;">
+                <img src="https://www.pinclipart.com/picdir/big/139-1390590_our-departments-departments-icon-png-clipart.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Employee</h5>
+                    <p class="card-text">Details of our workers.</p>
+                    <br>
+                    <a th:href="@{/users}" class="btn btn-primary">Details</a>
+                </div>
+            </div></div>
+
+            <div class="col"><div class="card" style="width: 15rem; height: 26rem;">
+                <img src="https://www.seekpng.com/png/small/524-5245797_attorney-salary-archives-ldap-icon.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Employee Salary</h5>
+                    <p class="card-text">Employers' salary details.</p>
+                    <br>
+                    <a th:href="@{/usersalary}" class="btn btn-primary">Details</a>
+                </div>
+            </div></div>
+
+            <div class="col"><div class="card" style="width: 15rem; height: 26rem;">
+                <img src="https://www.pngitem.com/pimgs/m/320-3203638_vehicle-icon-png-transparent-png.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Vehicles</h5>
+                    <p class="card-text">Employers' vehicle details.</p>
+
+                    <a th:href="@{/vehicle}" class="btn btn-primary">Details</a>
+                </div>
+            </div></div>
+
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

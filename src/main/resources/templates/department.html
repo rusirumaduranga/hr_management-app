@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Department Details</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+</head>
+<body>
+<div class="bg-image" style="background-image: url('https://cdn.wallpapersafari.com/47/97/14PgCE.jpg'); height: 100vh;">
+<div class="container-fluid text-center">
+    <br>
+    <div><h2>Department Details Management</h2></div>
+    <br>
+    <div class="mr-2">
+        <a th:href="@{/department/new}" class="h3" >Add New Department</a>
+    </div>
+    <br><br>
+    <div th:if="${message}" class="alert alert-success text-center">
+        [[${message}]]
+    </div>
+
+    <div>
+        <table class="table table-bordered table-dark table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Department Name</th>
+                <th>Location</th>
+                <th>Employee Count</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <th:block th:each="department : ${ListDepartments}">
+                <tr>
+                    <td>[[${department.id}]]</td>
+                    <td>[[${department.departmentname}]]</td>
+                    <td>[[${department.location}]]</td>
+                    <td>[[${department.employeecount}]]</td>
+
+                    <td><a href="" class="h4 mr-3" th:href="@{'/department/edit/'+${department.id}}">Edit</a>
+                        <a class="h4" th:href="@{'/department/delete/'+${department.id}}">Delete</a>
+                    </td>
+                </tr>
+            </th:block>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

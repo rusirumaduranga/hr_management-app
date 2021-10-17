@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Salary Details</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+</head>
+<body>
+<div class="bg-image" style="background-image: url('https://cdn.wallpapersafari.com/47/97/14PgCE.jpg'); height: 100vh;">
+<div class="container-fluid text-center">
+    <br>
+    <div><h2>Employee Salary Details Management</h2></div>
+    <br>
+    <div class="mr-2">
+        <a th:href="@{/usersalary/new}" class="h3" >Add New Employee salary</a>
+    </div>
+
+    <div th:if="${message}" class="alert alert-success text-center">
+        [[${message}]]
+    </div>
+    <br><br>
+    <div>
+        <table class="table table-bordered table-dark table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Employee Name</th>
+                <th>Job Role</th>
+                <th>Salary ($)</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <th:block th:each="usersalary : ${ListUsersalary}">
+                <tr>
+                    <td>[[${usersalary.id}]]</td>
+                    <td>[[${usersalary.employeename}]]</td>
+                    <td>[[${usersalary.jobrole}]]</td>
+                    <td>[[${usersalary.salary}]]</td>
+                    <td><a href="" class="h4 mr-3" th:href="@{'/usersalary/edit/'+${usersalary.id}}">Edit</a>
+                        <a class="h4" th:href="@{'/usersalary/delete/'+${usersalary.id}}">Delete</a>
+                    </td>
+                </tr>
+            </th:block>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
